@@ -1,0 +1,530 @@
+/* === TYPOLOGY DETAIL PAGE STYLES === */
+
+/* Container Personalizado */
+.container-custom {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media (min-width: 768px) {
+    .container-custom {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container-custom {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+/* Contenido Principal */
+.typology-content-section {
+    padding: 40px 0 80px;
+    background-color: #ffffff;
+}
+
+/* Breadcrumb */
+.typology-breadcrumb {
+    margin-bottom: 20px;
+}
+
+.breadcrumb {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+
+.breadcrumb-item a {
+    color: #666666;
+    text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+    color: #000000;
+}
+
+.breadcrumb-item.active {
+    color: #000000;
+    font-weight: 600;
+}
+
+/* Título */
+.typology-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+/* Galería de Imágenes */
+.typology-gallery {
+    margin-bottom: 40px;
+    margin-left: -7.5px;
+    margin-right: -7.5px;
+}
+
+.gallery-item-small {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    padding: 7.5px;
+}
+
+.gallery-item-small:hover {
+    transform: scale(1.02);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Información de Precio y Características */
+.typology-info {
+    padding: 30px 0;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 40px;
+}
+
+.price-range {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.price-range span {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #666666;
+}
+
+.features-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.feature-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background-color: #f8f9fa;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #333333;
+    border: 1px solid #e0e0e0;
+}
+
+.feature-badge i {
+    font-size: 16px;
+    color: #000000;
+}
+
+/* Servicios pequeños */
+.services-small {
+    margin-bottom: 50px;
+}
+
+.services-small h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #000000;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.service-item-small {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+}
+
+.service-item-small i {
+    font-size: 32px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.service-item-small span {
+    font-size: 13px;
+    color: #333333;
+}
+
+/* Tabs Personalizados */
+.typology-tabs {
+    margin-top: 50px;
+}
+
+.custom-tabs {
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.custom-tabs .nav-link {
+    color: #666666;
+    font-weight: 600;
+    border: none;
+    border-bottom: 3px solid transparent;
+    padding: 15px 25px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.custom-tabs .nav-link:hover {
+    color: #000000;
+    border-bottom-color: #e0e0e0;
+}
+
+.custom-tabs .nav-link.active {
+    color: #000000;
+    border-bottom-color: #000000;
+    background-color: transparent;
+}
+
+.custom-tab-content {
+    padding: 40px 0;
+    min-height: 300px;
+}
+
+.planos-container,
+.visita-virtual-container,
+.video-container {
+    max-width: 800px;
+}
+
+/* Sidebar Calculadora */
+.calculator-sidebar {
+    position: sticky;
+    top: 100px;
+}
+
+.calculator-card {
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.calculator-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.calculator-description {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.calculator-card .form-label {
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.calculator-card .form-control {
+    border: 1px solid #d0d0d0;
+    padding: 12px;
+    font-size: 16px;
+}
+
+.calculator-card .form-control:focus {
+    border-color: #000000;
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.1);
+}
+
+.calculator-card .btn-dark {
+    background-color: #000000;
+    border: none;
+    padding: 12px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.calculator-card .btn-dark:hover {
+    background-color: #333333;
+}
+
+/* Resultado de la Calculadora */
+.calculator-result {
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 2px solid #e0e0e0;
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.result-header h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+}
+
+.result-percentage {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000000;
+}
+
+.result-bar {
+    height: 12px;
+    background-color: #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.result-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4caf50 0%, #ff9800 50%, #f44336 100%);
+    transition: width 0.5s ease;
+    border-radius: 6px;
+}
+
+.result-message {
+    font-size: 14px;
+    margin: 0;
+    padding: 15px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.result-message.success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border-left: 4px solid #4caf50;
+}
+
+.result-message.warning {
+    background-color: #fff3e0;
+    color: #e65100;
+    border-left: 4px solid #ff9800;
+}
+
+.result-message.danger {
+    background-color: #ffebee;
+    color: #c62828;
+    border-left: 4px solid #f44336;
+}
+
+/* Modal de Galería */
+#galleryModal .modal-content {
+    background-color: #000000;
+}
+
+#galleryModal .modal-body {
+    padding: 0;
+}
+
+#galleryModal .carousel-item img {
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+#galleryModal .btn-close {
+    filter: invert(1);
+    opacity: 1;
+}
+
+#galleryModal .carousel-control-prev,
+#galleryModal .carousel-control-next {
+    width: 10%;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .calculator-sidebar {
+        position: static;
+        margin-top: 50px;
+    }
+    
+    .typology-title {
+        font-size: 2rem;
+    }
+    
+    .gallery-item-small {
+        height: 220px;
+    }
+    
+    .container-custom {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .typology-content-section {
+        padding: 20px 0 50px;
+    }
+    
+    .typology-title {
+        font-size: 1.75rem;
+    }
+    
+    .price-range {
+        font-size: 1.5rem;
+    }
+    
+    .gallery-item-small {
+        height: 180px;
+        padding: 5px;
+    }
+    
+    .typology-gallery {
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+    
+    .features-list {
+        flex-direction: column;
+    }
+    
+    .feature-badge {
+        justify-content: center;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .custom-tabs .nav-link {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+    
+    .calculator-card {
+        padding: 20px;
+    }
+    
+    .calculator-title {
+        font-size: 1.25rem;
+    }
+    
+    .container-custom {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-item-small {
+        height: 200px;
+        padding: 5px;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .service-item-small {
+        padding: 10px;
+    }
+    
+    .service-item-small i {
+        font-size: 24px;
+    }
+    
+    .service-item-small span {
+        font-size: 12px;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.typology-gallery,
+.typology-info,
+.services-small,
+.typology-tabs {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.calculator-card {
+    animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+/* Loading state para imágenes */
+.gallery-img {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+}
+
+/* Mejoras de accesibilidad */
+.gallery-item-small:focus {
+    outline: 3px solid #17a2b8;
+    outline-offset: 2px;
+}
+
+.custom-tabs .nav-link:focus {
+    outline: 2px solid #17a2b8;
+    outline-offset: 2px;
+}
+
+/* Smooth transitions */
+* {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Print styles */
+@media print {
+    .top-bar,
+    .main-navbar,
+    .calculator-sidebar,
+    .footer,
+    .footer-bottom,
+    .btn {
+        display: none;
+    }
+    
+    .typology-content-section {
+        padding: 0;
+    }
+    
+    .gallery-item-small {
+        height: auto;
+        page-break-inside: avoid;
+    }
+}

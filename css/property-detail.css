@@ -1,0 +1,491 @@
+/* === PROPERTY DETAIL PAGE STYLES === */
+
+/* Sección de Header de Propiedad */
+.property-header-section {
+    padding: 80px 0 60px;
+    background-color: #ffffff;
+}
+
+.property-main-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.property-description {
+    font-size: 1.1rem;
+    color: #333333;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* Lista de características */
+.property-features-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: #333333;
+}
+
+.feature-item i {
+    color: #000000;
+    font-size: 20px;
+}
+
+/* Botón de reserva */
+.btn-reserve,
+.reserve-btn {
+    padding: 12px 40px;
+    font-weight: 600;
+    border-radius: 30px;
+    border: 2px solid #000000;
+    color: #000000;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    text-transform: none;
+}
+
+.btn-reserve:hover,
+.reserve-btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Galería de Imágenes */
+.property-gallery-section {
+    padding: 0;
+    margin-bottom: 80px;
+}
+
+.gallery-item {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover .gallery-image {
+    transform: scale(1.05);
+}
+
+/* Sección de Servicios */
+.services-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 50px;
+}
+
+.service-item {
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+.service-icon i {
+    font-size: 36px;
+    color: #000000;
+}
+
+.service-item:hover .service-icon {
+    background-color: #000000;
+}
+
+.service-item:hover .service-icon i {
+    color: #ffffff;
+}
+
+.service-label {
+    font-size: 14px;
+    color: #333333;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Sección de Tipología */
+.typology-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.typology-table {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.typology-table thead {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.typology-table thead th {
+    padding: 20px;
+    font-weight: 600;
+    border: none;
+    text-align: center;
+}
+
+.typology-table tbody td {
+    padding: 25px 20px;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.typology-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.typology-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Sección de Adjudicación */
+.adjudication-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.adjudication-card {
+    padding: 40px 30px;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.adjudication-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.adjudication-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.adjudication-date {
+    font-size: 16px;
+    color: #666666;
+    margin: 0;
+}
+
+/* Lightbox para galería (opcional) */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+}
+
+.lightbox-image {
+    width: 100%;
+    height: auto;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: #ffffff;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+/* Animaciones */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.property-header-section,
+.services-section,
+.typology-section,
+.adjudication-section {
+    animation: slideInUp 0.8s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .property-main-title {
+        font-size: 2.5rem;
+    }
+    
+    .gallery-item {
+        height: 300px;
+    }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .service-icon i {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .property-main-title {
+        font-size: 2rem;
+    }
+    
+    .property-header-section {
+        padding: 40px 0 30px;
+    }
+    
+    .property-features-list {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .gallery-item {
+        height: 250px;
+        margin-bottom: 10px;
+    }
+    
+    .services-section,
+    .typology-section,
+    .adjudication-section {
+        padding: 50px 0;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+    
+    .typology-table {
+        font-size: 14px;
+    }
+    
+    .typology-table thead th,
+    .typology-table tbody td {
+        padding: 15px 10px;
+    }
+    
+    /* Hacer tabla responsive */
+    .typology-table thead {
+        display: none;
+    }
+    
+    .typology-table tbody tr {
+        display: block;
+        margin-bottom: 20px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+    }
+    
+    .typology-table tbody td {
+        display: block;
+        text-align: left;
+        padding: 15px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .typology-table tbody td:before {
+        content: attr(data-label);
+        font-weight: 700;
+        display: block;
+        margin-bottom: 5px;
+        color: #000000;
+    }
+    
+    .typology-table tbody td:last-child {
+        border-bottom: none;
+        text-align: center;
+    }
+}
+
+/* Print styles */
+@media print {
+    .top-bar,
+    .main-navbar,
+    .footer,
+    .footer-bottom,
+    .btn-reserve,
+    .reserve-btn {
+        display: none;
+    }
+    
+    .property-main-title {
+        font-size: 2rem;
+    }
+    
+    .gallery-item {
+        height: auto;
+        page-break-inside: avoid;
+    }
+}
+
+/* Accesibilidad */
+.btn-reserve:focus,
+.reserve-btn:focus,
+.gallery-item:focus {
+    outline: 3px solid #17a2b8;
+    outline-offset: 3px;
+}
+
+/* Scroll suave para anclas internas */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mejoras de carga de imágenes */
+.gallery-image {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.gallery-image[src] {
+    animation: none;
+    background: none;
+}
+
+/* Estados de hover mejorados */
+.adjudication-card,
+.service-item,
+.gallery-item {
+    will-change: transform;
+}
+
+/* Indicador de más información */
+.more-info-indicator {
+    display: inline-block;
+    margin-left: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.service-item:hover .more-info-indicator,
+.adjudication-card:hover .more-info-indicator {
+    opacity: 1;
+}
+/* Sección de Video a Ancho Completo */
+.video-section {
+    padding: 0;
+    margin: 60px 0;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Ratio 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .video-section {
+        margin: 40px 0;
+    }
+}
