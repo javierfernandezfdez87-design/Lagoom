@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Distrito Universidad R3 - Complejo residencial de 62 viviendas en alquiler asequible">
+    <meta name="description"
+        content="Distrito Universidad R3 - Complejo residencial de 62 viviendas en alquiler asequible">
     <title>Distrito Universidad R3 - Lagoom Living</title>
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
     <!-- CSS personalizado -->
+    <link rel="stylesheet" href="css/lagoom-base.css">
+    <link rel="stylesheet" href="css/lagoom-components.css">
     <link rel="stylesheet" href="css/lagoom-styles.css">
     <link rel="stylesheet" href="css/property-detail.css">
 </head>
+
 <body>
     <!-- Top Bar Negro -->
     <div class="top-bar">
@@ -26,7 +38,7 @@
                     <a href="#" class="top-bar-link"><i class="bi bi-youtube"></i></a>
                     <a href="#contacto" class="top-bar-link">Contacto</a>
                     <a href="#" class="top-bar-link">
-                        <span></span>
+                        <span class="color-square"></span>
                         Descubre Lagoom Living
                     </a>
                 </div>
@@ -38,7 +50,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white main-navbar">
         <div class="container-custom">
             <!-- Logo a la izquierda -->
-            <a class="navbar-brand" href="lagoom-index.html">
+            <a class="navbar-brand" href="index.html">
                 <img src="img/lagoom-gestora-inversion-inmobiliaria-1.png" alt="Lagoom Living" class="logo-image">
             </a>
 
@@ -51,7 +63,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="lagoom-index.html">Promociones</a>
+                        <a class="nav-link active" href="index.html">Promociones</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="requisitos-acceso.html">Requisitos de acceso</a>
@@ -71,11 +83,11 @@
                 <div class="col-lg-8">
                     <h1 class="property-main-title">Distrito Universidad R3</h1>
                     <p class="property-description">
-                        Complejo residencial de 62 viviendas acogidas destinadas a alquiler asequible en régimen de 
-                        VPO. Las viviendas constan de 1 a 4 dormitorios, con piscina, 92 plazas de garaje y 62 
-                        trasteros.
+                        Conjunto residencial de 62 viviendas adosadas destinadas a alquiler asequible en régimen de VPO
+                        de precio limitado. Las viviendas constan de 1 a 4 dormitorios, con piscina, 95 plazas de garaje
+                        y 62 trasteros.
                     </p>
-                    
+
                     <div class="property-features-list">
                         <div class="feature-item">
                             <i class="bi bi-check-circle-fill"></i>
@@ -111,23 +123,18 @@
             <div class="row g-3">
                 <div class="col-lg-4">
                     <div class="gallery-item">
-                        <img src="img/r3_piscina1.jpg" 
-                             alt="Vista exterior Distrito Universidad R3" 
-                             class="gallery-image">
+                        <img src="img/r3_piscina1.jpg" alt="Vista exterior Distrito Universidad R3"
+                            class="gallery-image">
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="gallery-item">
-                        <img src="img/r3_piscina2.jpg" 
-                             alt="Vista aérea complejo" 
-                             class="gallery-image">
+                        <img src="img/r3_piscina2.jpg" alt="Vista aérea complejo" class="gallery-image">
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="gallery-item">
-                        <img src="img/r3_piscina3.jpg" 
-                             alt="Zona común con piscina" 
-                             class="gallery-image">
+                        <img src="img/r3_piscina3.jpg" alt="Zona común con piscina" class="gallery-image">
                     </div>
                 </div>
             </div>
@@ -138,13 +145,10 @@
     <section class="video-section">
         <div class="container">
             <div class="video-wrapper">
-                <iframe 
-                    src="https://www.youtube.com/embed/YFP9wNq-QHw?si=-mBMz4JpiEci5dkc" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" 
-                    allowfullscreen>
+                <iframe src="https://www.youtube.com/embed/YFP9wNq-QHw?si=-mBMz4JpiEci5dkc" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                 </iframe>
             </div>
         </div>
@@ -154,7 +158,7 @@
     <section class="services-section">
         <div class="container">
             <h2 class="section-title text-center">Servicios y equipamiento</h2>
-            
+
             <div class="row g-4 justify-content-center">
                 <div class="col-md-2 col-6">
                     <div class="service-item">
@@ -212,8 +216,9 @@
     <section class="typology-section">
         <div class="container">
             <h2 class="section-title text-center">Tipología de viviendas</h2>
-            <p class="text-center mb-5">Disponemos de 3 tipologías distintas: viviendas de un dormitorio, de tres y de cuatro dormitorios.</p>
-            
+            <p class="text-center mb-5">Disponemos de 3 tipologías distintas: viviendas de un dormitorio, de tres y de
+                cuatro dormitorios.</p>
+
             <div class="table-responsive">
                 <table class="table typology-table">
                     <thead>
@@ -228,23 +233,23 @@
                     <tbody>
                         <tr>
                             <td>1 dormitorio</td>
-                            <td>Desde 59.95 m2</td>
+                            <td>Desde 59 m2</td>
                             <td>1 parking + 1 trastero</td>
-                            <td>Desde 534€</td>
+                            <td>Desde 535€</td>
                             <td><a href="vivienda-1-dormitorio.html" class="btn btn-dark btn-sm">Ver detalles</a></td>
                         </tr>
                         <tr>
                             <td>3 dormitorios</td>
-                            <td>Desde 89.81 m2</td>
+                            <td>Desde 89 m2</td>
                             <td>1 parking + 1 trastero</td>
                             <td>Desde 732€</td>
                             <td><a href="vivienda-3-dormitorios.html" class="btn btn-dark btn-sm">Ver detalles</a></td>
                         </tr>
                         <tr>
                             <td>4 dormitorios</td>
-                            <td>Desde 88.77 m2</td>
+                            <td>Desde 88 m2</td>
                             <td>1 parking + 1 trastero</td>
-                            <td>Desde 728€</td>
+                            <td>Desde 727€</td>
                             <td><a href="vivienda-4-dormitorios.html" class="btn btn-dark btn-sm">Ver detalles</a></td>
                         </tr>
                     </tbody>
@@ -257,46 +262,58 @@
     <section class="adjudication-section">
         <div class="container">
             <h2 class="section-title text-center">Proceso de adjudicación</h2>
-            
+
             <div class="row g-4 mt-4">
                 <div class="col-md-4">
                     <div class="adjudication-card">
                         <h3 class="adjudication-title">APERTURA DE INSCRIPCIONES</h3>
-                        <p class="adjudication-date">WEB 09/04/2024 (a partir de las 09:00)</p>
+                        <p class="adjudication-date">WEB 16/03/2026 (a partir de las 00:00)</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="adjudication-card">
-                        <h3 class="adjudication-title">PRIMERA ADJUDICACIÓN</h3>
-                        <p class="adjudication-date">09/07/2024</p>
+                        <h3 class="adjudication-title">ADJUDICACIÓN</h3>
+                        <p class="adjudication-date">06/04/2026</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="adjudication-card">
                         <h3 class="adjudication-title">ENTRADA DE INQUILINOS</h3>
-                        <p class="adjudication-date">Diciembre 2024</p>
+                        <p class="adjudication-date">Junio 2026</p>
                     </div>
                 </div>
             </div>
-
+            <div class="text-center mt-5">
+                <p>*Apertura de inscripciones: es el momento a partir del cual los interesados podrán registrar
+                    formalmente su solicitud de inscripción para poder optar a una vivienda.</p>
+                <p>*Adjudicación: es el momento en el cual se realizará la asignación de viviendas según listado
+                    definitivo de solicitudes admitidas.</p>
+                <p>*Entrada de inquilinos: es una fecha orientativa a partir de la cual entrarán a residir los
+                    inquilinos a su vivienda.</p>
+            </div>
             <div class="text-center mt-5">
                 <button class="btn btn-outline-dark">Ver bases de adjudicación</button>
             </div>
         </div>
     </section>
 
-     <!-- Sección de Financiación -->
+    <!-- Sección de Financiación -->
     <section class="funding-section">
-        <div class="container text-center">
-            <h2 class="funding-title">Lagoom Living Distrito Universidad financiada por la Unión Europea - NextGenerationEU</h2>
+        <div class="container-custom text-center">
+            <h2 class="funding-title">Lagoom Living Distrito Universidad financiada por la Unión Europea -
+                NextGenerationEU</h2>
             <div class="funding-logos">
                 <img src="img/ue.png" alt="Unión Europea">
                 <img src="img/ministerio.png" alt="Gobierno de España">
                 <img src="img/kit.png" alt="Plan de Recuperación">
+                <img src="img/imagen6.png" alt="Crédito Oficial">
                 <img src="img/junta.png" alt="Junta de Andalucía">
+                <img src="img/imagen5.png" alt="Ciudad de Málaga">
+                <img src="img/SMV-Logo.png" alt="SMV">
             </div>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -305,8 +322,9 @@
                 <!-- Columna 1: Logo e Información -->
                 <div class="col-lg-4">
                     <a class="navbar-brand" href="lagoom-index.html">
-                <img src="img/lagoom-gestora-inversion-inmobiliaria-1.png" alt="Lagoom Living" class="logo-image">
-            </a>
+                        <img src="img/lagoom-gestora-inversion-inmobiliaria-1.png" alt="Lagoom Living"
+                            class="logo-image">
+                    </a>
                     <p class="footer-address">
                         Pl. de la Solidaridad 12, Distrito Centro<br>
                         29008 Málaga
@@ -317,16 +335,16 @@
                     </p>
                 </div>
 
-                
-                
-    </footer>
 
+
+    </footer>
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <!-- JavaScript personalizado -->
     <script src="js/lagoom-main.js"></script>
     <script src="js/property-detail.js"></script>
 </body>
+
 </html>

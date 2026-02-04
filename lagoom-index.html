@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Lagoom Living - Alquiler asequible en Distrito Universidad, Málaga">
     <title>Lagoom Living - Alquiler asequible</title>
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
     <!-- CSS personalizado -->
+    <link rel="stylesheet" href="css/lagoom-base.css">
+    <link rel="stylesheet" href="css/lagoom-components.css">
+    <link rel="stylesheet" href="css/lagoom-pages.css">
     <link rel="stylesheet" href="css/lagoom-styles.css">
 </head>
+
 <body>
     <!-- Top Bar Negro -->
     <div class="top-bar">
@@ -25,7 +37,7 @@
                     <a href="#" class="top-bar-link"><i class="bi bi-youtube"></i></a>
                     <a href="#contacto" class="top-bar-link">Contacto</a>
                     <a href="#" class="top-bar-link">
-                        <span></span>
+                        <span class="color-square"></span>
                         Descubre Lagoom Living
                     </a>
                 </div>
@@ -70,7 +82,14 @@
                 <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
             </div>
             <div class="hero-right">
-                <img src="img/malaga_skyline.jpg" alt="Vista de Málaga" class="hero-image">
+                <div
+                    style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                    <iframe src="https://www.youtube.com/embed/YFP9wNq-QHw?autoplay=0&rel=0" title="Lagoom Living Video"
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
             </div>
         </div>
     </section>
@@ -89,8 +108,9 @@
                             </div>
                             <div class="property-content">
                                 <h3 class="property-title">Distrito Universidad R3</h3>
-                                <p class="property-price">534€ - 728€<span>/mes</span></p>
-                                <p class="property-location">Calle Ing. Francisco Merino 29199 - Teatinos, Málaga (España)</p>
+                                <p class="property-price">535€ - 744€<span>/mes</span></p>
+                                <p class="property-location">Calle Ing. Francisco Merino 29199 - Teatinos, Málaga
+                                    (España)</p>
                                 <div class="property-features">
                                     <span><i class="bi bi-car-front"></i> 1-2</span>
                                     <span><i class="bi bi-door-open"></i> 1-2</span>
@@ -113,8 +133,8 @@
                         </div>
                         <div class="property-content">
                             <h3 class="property-title">Distrito Universidad R11</h3>
-                            <p class="property-price">320€ - 690€<span>/mes</span></p>
-                            <p class="property-location">Calle Ing. Francisco Merino 29199 - Teatinos, Málaga (España)</p>
+                            <p class="property-location">Calle Ing. Francisco Merino 29199 - Teatinos, Málaga (España)
+                            </p>
                             <div class="property-features">
                                 <span><i class="bi bi-car-front"></i> 1-2</span>
                                 <span><i class="bi bi-door-open"></i> 1-2</span>
@@ -136,8 +156,8 @@
                         </div>
                         <div class="property-content">
                             <h3 class="property-title">Distrito Universidad R12</h3>
-                            <p class="property-price">320€ - 690€<span>/mes</span></p>
-                            <p class="property-location">Calle Ing. Francisco Merino 29199 - Teatinos, Málaga (España)</p>
+                            <p class="property-location">Calle Ing. Francisco Merino 29199 - Teatinos, Málaga (España)
+                            </p>
                             <div class="property-features">
                                 <span><i class="bi bi-car-front"></i> 1-2</span>
                                 <span><i class="bi bi-door-open"></i> 1-2</span>
@@ -159,8 +179,8 @@
                         </div>
                         <div class="property-content">
                             <h3 class="property-title">Distrito Universidad R15</h3>
-                            <p class="property-price">320€ - 690€<span>/mes</span></p>
-                            <p class="property-location">Calle Ing. Francisco Merino 29199 - Teatinos, Málaga (España)</p>
+                            <p class="property-location">Calle Ing. Francisco Merino 29199 - Teatinos, Málaga (España)
+                            </p>
                             <div class="property-features">
                                 <span><i class="bi bi-car-front"></i> 1-2</span>
                                 <span><i class="bi bi-door-open"></i> 1-2</span>
@@ -178,13 +198,17 @@
 
     <!-- Sección de Financiación -->
     <section class="funding-section">
-        <div class="container text-center">
-            <h2 class="funding-title">Lagoom Living Distrito Universidad financiada por la Unión Europea - NextGenerationEU</h2>
+        <div class="container-custom text-center">
+            <h2 class="funding-title">Lagoom Living Distrito Universidad financiada por la Unión Europea -
+                NextGenerationEU</h2>
             <div class="funding-logos">
                 <img src="img/ue.png" alt="Unión Europea">
                 <img src="img/ministerio.png" alt="Gobierno de España">
                 <img src="img/kit.png" alt="Plan de Recuperación">
+                <img src="img/imagen6.png" alt="Crédito Oficial">
                 <img src="img/junta.png" alt="Junta de Andalucía">
+                <img src="img/imagen5.png" alt="Ciudad de Málaga">
+                <img src="img/SMV-Logo.png" alt="SMV">
             </div>
         </div>
     </section>
@@ -196,8 +220,9 @@
                 <!-- Columna 1: Logo e Información -->
                 <div class="col-lg-4">
                     <a class="navbar-brand" href="lagoom-index.html">
-                <img src="img/lagoom-gestora-inversion-inmobiliaria-1.png" alt="Lagoom Living" class="logo-image">
-            </a>
+                        <img src="img/lagoom-gestora-inversion-inmobiliaria-1.png" alt="Lagoom Living"
+                            class="logo-image">
+                    </a>
                     <p class="footer-address">
                         Pl. de la Solidaridad 12, Distrito Centro<br>
                         29008 Málaga
@@ -208,15 +233,16 @@
                     </p>
                 </div>
 
-                
-                
+
+
     </footer>
 
-   
+
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <!-- JavaScript personalizado -->
     <script src="js/lagoom-main.js"></script>
 </body>
+
 </html>

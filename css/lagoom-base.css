@@ -1,0 +1,73 @@
+/* === LAGOOM LIVING - BASE STYLES === */
+
+/* === VARIABLES GLOBALES === */
+:root {
+    --black: #000000;
+    --white: #FFFFFF;
+    --turquoise: #17a2b8;
+    --gray-text: #666666;
+    --gray-light: #f8f9fa;
+    --border-color: #e0e0e0;
+    --lagoom-black: #000000;
+    --lagoom-white: #FFFFFF;
+    --lagoom-beige: #F5F5DC;
+    --lagoom-dark-bg: #1a1a1a;
+}
+
+/* === RESET Y ESTILOS BASE === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* === TIPOGRAFÍA === */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+}
+
+/* === CONTAINER PERSONALIZADO === */
+.container-custom {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@media (min-width: 768px) {
+    .container-custom {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container-custom {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+/* === SMOOTH SCROLL === */
+html {
+    scroll-behavior: smooth;
+}
+
+/* === MEJORAS DE ACCESIBILIDAD === */
+a:focus,
+button:focus {
+    outline: 2px solid var(--turquoise);
+    outline-offset: 2px;
+}
+
+/* === LOADING STATE PARA IMÁGENES === */
+img {
+    background-color: var(--gray-light);
+}

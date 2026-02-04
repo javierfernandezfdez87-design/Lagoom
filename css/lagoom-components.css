@@ -1,0 +1,336 @@
+/* === LAGOOM LIVING - COMPONENTES REUTILIZABLES === */
+
+/* === TOP BAR === */
+.top-bar {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.top-bar-link {
+    color: var(--white);
+    text-decoration: none;
+    margin: 0 15px;
+    transition: opacity 0.3s;
+}
+
+.top-bar-link:hover {
+    opacity: 0.7;
+    color: var(--white);
+}
+
+.color-square {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* === NAVEGACIÓN PRINCIPAL === */
+.main-navbar {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.main-navbar .container-custom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-brand {
+    margin-right: 0;
+}
+
+.logo-image {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.logo-text {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--black);
+    letter-spacing: -1px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.main-navbar .nav-link {
+    color: var(--black);
+    font-weight: 500;
+    margin: 0 15px;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.main-navbar .nav-link:hover,
+.main-navbar .nav-link.active {
+    border-bottom: 2px solid var(--black);
+}
+
+/* === BOTONES === */
+.btn-inscribirse {
+    background-color: #d4c5b0;
+    color: #000;
+    border: 2px solid #000;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-inscribirse:hover {
+    background-color: #000;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-inscribirse-pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+.btn-inscribirse-pulse:hover {
+    animation: none;
+    transform: scale(1.05);
+}
+
+/* === SECCIÓN DE FINANCIACIÓN === */
+.funding-section {
+    padding: 60px 0;
+    background-color: var(--gray-light);
+}
+
+.funding-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 40px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.funding-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.funding-logos img {
+    height: 60px;
+    width: auto;
+    filter: grayscale(0%);
+    transition: filter 0.3s;
+}
+
+.funding-logos img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* === FOOTER === */
+.footer,
+.footer-section {
+    background-color: var(--white);
+    padding: 60px 0 40px;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 20px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.footer-address,
+.footer-contact {
+    font-size: 14px;
+    color: var(--gray-text);
+    line-height: 1.8;
+}
+
+.footer-contact a {
+    color: var(--gray-text);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-contact a:hover {
+    color: var(--black);
+}
+
+.footer-links {
+    text-align: center;
+}
+
+.footer-link-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: var(--gray-light);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    color: var(--black);
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.footer-link-icon:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.footer-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 10px;
+}
+
+.footer-menu a {
+    color: var(--gray-text);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-menu a:hover {
+    color: var(--black);
+}
+
+.footer-collaboration {
+    text-align: right;
+}
+
+.collaboration-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.footer-collaboration h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.collaboration-logos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.collaboration-logos img {
+    max-width: 120px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.collaboration-logos img:hover {
+    opacity: 1;
+}
+
+/* === FOOTER BOTTOM === */
+.footer-bottom {
+    background-color: var(--turquoise);
+    color: var(--white);
+    padding: 30px 0;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-legal a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 13px;
+    transition: opacity 0.3s;
+}
+
+.footer-legal a:hover {
+    opacity: 0.7;
+}
+
+.footer-copyright {
+    font-size: 13px;
+    margin: 0;
+}
+
+.footer-consent {
+    font-size: 12px;
+    margin-top: 20px;
+    opacity: 0.8;
+    text-align: center;
+}
+
+/* === ANIMACIONES GLOBALES === */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 992px) {
+    .navbar-brand {
+        margin-right: auto;
+    }
+
+    .footer-collaboration {
+        text-align: left;
+        margin-top: 30px;
+    }
+
+    .collaboration-logos {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-bar {
+        text-align: center;
+    }
+
+    .top-bar .col-md-6 {
+        text-align: center !important;
+        margin-bottom: 10px;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
