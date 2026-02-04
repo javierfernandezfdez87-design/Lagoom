@@ -144,18 +144,29 @@ h6 {
     flex: 1;
     background-color: var(--black);
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
-    padding: 60px;
+    padding: 60px 80px;
 }
 
 .hero-left h1 {
     color: var(--white);
-    font-size: 2.5rem;
+    font-size: 3.8rem;
     font-weight: 700;
-    line-height: 1.2;
-    max-width: 600px;
+    line-height: 1.1;
+    max-width: 700px;
     font-family: 'Outfit', sans-serif;
+    margin-bottom: 25px;
+}
+
+.hero-description-text {
+    color: var(--white);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    max-width: 600px;
+    font-family: 'Jost', sans-serif;
+    opacity: 0.9;
 }
 
 .hero-right {
