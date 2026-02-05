@@ -324,14 +324,25 @@ h6 {
 
 .funding-logos img {
     max-height: 80px;
-    filter: grayscale(100%);
-    opacity: 0.7;
     transition: all 0.3s;
 }
 
-.funding-logos img:hover {
-    filter: grayscale(0%);
-    opacity: 1;
+/* Aumentar tamaño específico para imagen6.png (ICO) */
+.funding-logos img[src*="imagen6.png"] {
+    max-height: 110px;
+    height: 100px;
+}
+
+/* Aumentar tamaño específico para imagen6.png (ICO) */
+.funding-logos img[src*="imagen5.png"] {
+    max-height: 110px;
+    height: 80px;
+}
+
+/* Aumentar tamaño específico para imagen6.png (ICO) */
+.funding-logos img[src*="SMV-Logo.png"] {
+    max-height: 110px;
+    height: 80px;
 }
 
 /* === FOOTER === */
@@ -613,4 +624,73 @@ img {
 .btn-inscribirse-pulse:hover {
     animation: none;
     transform: scale(1.05);
+}
+
+/* Botón de descarga destacado */
+.btn-download-emphasized {
+    background-color: var(--black);
+    color: var(--white);
+    border: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 15px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.1rem;
+}
+
+.btn-download-emphasized:hover {
+    background-color: #d4c5b0;
+    color: var(--black);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn-download-emphasized i {
+    font-size: 1.3rem;
+}
+
+/* Scroll interno para tablas */
+.table-scroll-container {
+    max-height: 500px;
+    overflow-y: auto;
+    position: relative;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--black) var(--gray-light);
+}
+
+.table-scroll-container table {
+    margin-bottom: 0;
+}
+
+.table-scroll-container thead th {
+    position: sticky;
+    top: 0;
+    background-color: var(--gray-light);
+    /* Coincide con table-secondary */
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Personalización del scrollbar para Webkit (Chrome, Safari, Edge) */
+.table-scroll-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.table-scroll-container::-webkit-scrollbar-track {
+    background: var(--gray-light);
+}
+
+.table-scroll-container::-webkit-scrollbar-thumb {
+    background-color: var(--black);
+    border-radius: 4px;
+    border: 2px solid var(--gray-light);
 }
