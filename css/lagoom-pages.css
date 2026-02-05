@@ -4,6 +4,7 @@
 .hero-section {
     height: auto;
     overflow: hidden;
+    background-color: black;
 }
 
 .hero-content {
