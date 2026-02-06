@@ -341,7 +341,7 @@ h6 {
 }
 
 /* Aumentar tamaño específico para imagen6.png (ICO) */
-.funding-logos img[src*="SMV-Logo.png"] {
+.funding-logos img[src*="logo-smv.png"] {
     max-height: 110px;
     height: 80px;
 }
