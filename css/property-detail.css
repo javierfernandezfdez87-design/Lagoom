@@ -167,26 +167,79 @@
 /* Adjudication Section */
 .adjudication-section {
     padding: 80px 0;
+    background-color: #f8f9fa;
+    /* Light background for contrast */
 }
 
 .adjudication-card {
-    background-color: #fafafa;
+    background-color: #ffffff;
     padding: 40px 30px;
-    border-radius: 12px;
+    border-radius: 16px;
     text-align: center;
     height: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.adjudication-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.adjudication-icon {
+    font-size: 2.2rem;
+    /* Reduced from 3rem */
+    color: #000;
+    /* Black icon */
+    margin-bottom: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    /* Reduced from 80px */
+    height: 70px;
+    /* Reduced from 80px */
+    background-color: transparent;
+    /* Transparent background initially */
+    border: 1.5px solid #000;
+    /* Black border */
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.adjudication-card:hover .adjudication-icon {
+    background-color: #000;
+    /* Black background on hover */
+    color: #fff;
+    /* White icon on hover */
+    transform: scale(1.1);
 }
 
 .adjudication-title {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 700;
     margin-bottom: 15px;
-    color: #000;
+    color: #999;
     font-family: 'Outfit', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .adjudication-date {
-    font-size: 0.95rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--lagoom-black, #000);
+    margin-bottom: 5px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.adjudication-subtext {
+    font-size: 0.9rem;
     color: #666;
     margin: 0;
     font-family: 'Jost', sans-serif;

@@ -1,46 +1,55 @@
 // === LAGOOM LIVING - JavaScript Vanilla ===
 
 // Inicializar cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', function() {
-    
+document.addEventListener('DOMContentLoaded', function () {
+
     // Inicializar todas las funciones
     initSmoothScroll();
     initScrollAnimations();
     initNavbarScroll();
     initPropertyCards();
     initMobileMenu();
-    
+    initTooltips();
+
     console.log('Lagoom Living - Página cargada correctamente');
 });
+
+// === TOOLTIPS ===
+function initTooltips() {
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+}
 
 // === SMOOTH SCROLL ===
 function initSmoothScroll() {
     // Seleccionar todos los enlaces de navegación
     const navLinks = document.querySelectorAll('a[href^="#"]');
-    
+
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            
+
             // Solo aplicar si el href es un hash válido
             if (href && href !== '#' && href.length > 1) {
                 e.preventDefault();
-                
+
                 const targetId = href.substring(1);
                 const targetElement = document.getElementById(targetId);
-                
+
                 if (targetElement) {
                     // Scroll suave al elemento
                     targetElement.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
                     });
-                    
+
                     // Cerrar menú móvil si está abierto
                     const navbarCollapse = document.querySelector('.navbar-collapse');
                     if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-                        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || 
-                                          new bootstrap.Collapse(navbarCollapse, { toggle: false });
+                        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) ||
+                            new bootstrap.Collapse(navbarCollapse, { toggle: false });
                         bsCollapse.hide();
                     }
                 }
@@ -56,7 +65,7 @@ function initScrollAnimations() {
         threshold: 0.1,
         rootMargin: '0px 0px -100px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -66,7 +75,7 @@ function initScrollAnimations() {
             }
         });
     }, observerOptions);
-    
+
     // Observar las tarjetas de propiedades
     const propertyCards = document.querySelectorAll('.property-card');
     propertyCards.forEach(card => {
@@ -75,7 +84,7 @@ function initScrollAnimations() {
         card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(card);
     });
-    
+
     // Agregar clase cuando sea visible
     const style = document.createElement('style');
     style.textContent = `
@@ -92,10 +101,10 @@ function initNavbarScroll() {
     const navbar = document.querySelector('.main-navbar');
     const topBar = document.querySelector('.top-bar');
     let lastScroll = 0;
-    
-    window.addEventListener('scroll', function() {
+
+    window.addEventListener('scroll', function () {
         const currentScroll = window.pageYOffset;
-        
+
         // Agregar sombra al navbar cuando se hace scroll
         if (currentScroll > 50) {
             navbar.classList.add('navbar-scrolled');
@@ -107,7 +116,7 @@ function initNavbarScroll() {
             navbar.classList.remove('navbar-scrolled');
             navbar.style.boxShadow = 'none';
         }
-        
+
         // Ocultar/mostrar top bar al hacer scroll (opcional)
         if (currentScroll > 100 && currentScroll > lastScroll) {
             // Scroll hacia abajo - ocultar top bar
@@ -121,7 +130,7 @@ function initNavbarScroll() {
                 topBar.style.transform = 'translateY(0)';
             }
         }
-        
+
         lastScroll = currentScroll;
     });
 }
@@ -129,24 +138,24 @@ function initNavbarScroll() {
 // === FUNCIONALIDAD DE TARJETAS DE PROPIEDADES ===
 function initPropertyCards() {
     const propertyCards = document.querySelectorAll('.property-card');
-    
+
     propertyCards.forEach(card => {
         // Agregar evento click para ver detalles
-        card.addEventListener('click', function(e) {
+        card.addEventListener('click', function (e) {
             // Evitar que el click en el badge active esto
             if (e.target.classList.contains('property-badge')) {
                 return;
             }
-            
+
             const propertyTitle = this.querySelector('.property-title').textContent;
             console.log('Propiedad seleccionada:', propertyTitle);
-            
+
             // Aquí podrías abrir un modal, redirigir a otra página, etc.
             // showPropertyModal(propertyTitle);
         });
-        
+
         // Efecto hover mejorado
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function () {
             this.style.cursor = 'pointer';
         });
     });
@@ -156,15 +165,15 @@ function initPropertyCards() {
 function initMobileMenu() {
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.querySelector('.navbar-collapse');
-    
+
     if (navbarToggler && navbarCollapse) {
         // Agregar evento para cerrar menú al hacer click fuera
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             const isClickInside = navbarToggler.contains(e.target) || navbarCollapse.contains(e.target);
-            
+
             if (!isClickInside && navbarCollapse.classList.contains('show')) {
-                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || 
-                                  new bootstrap.Collapse(navbarCollapse, { toggle: false });
+                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) ||
+                    new bootstrap.Collapse(navbarCollapse, { toggle: false });
                 bsCollapse.hide();
             }
         });
@@ -193,12 +202,12 @@ function showPropertyModal(propertyTitle) {
             </div>
         </div>
     `;
-    
+
     // Agregar al body si no existe
     if (!document.getElementById('propertyModal')) {
         document.body.insertAdjacentHTML('beforeend', modalHTML);
     }
-    
+
     // Mostrar modal
     const modal = new bootstrap.Modal(document.getElementById('propertyModal'));
     modal.show();
@@ -207,11 +216,11 @@ function showPropertyModal(propertyTitle) {
 // === FILTRO DE PROPIEDADES (Opcional) ===
 function filterProperties(criteria) {
     const propertyCards = document.querySelectorAll('.property-card');
-    
+
     propertyCards.forEach(card => {
         const badge = card.querySelector('.property-badge');
         const status = badge ? badge.textContent.trim() : '';
-        
+
         if (criteria === 'all' || status.toLowerCase() === criteria.toLowerCase()) {
             card.style.display = 'block';
             // Animar entrada
@@ -225,7 +234,7 @@ function filterProperties(criteria) {
 // === LAZY LOADING DE IMÁGENES ===
 function initLazyLoading() {
     const images = document.querySelectorAll('img[data-src]');
-    
+
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -236,7 +245,7 @@ function initLazyLoading() {
             }
         });
     });
-    
+
     images.forEach(img => imageObserver.observe(img));
 }
 
@@ -244,7 +253,7 @@ function initLazyLoading() {
 function updatePropertyCount() {
     const visibleCards = document.querySelectorAll('.property-card:not([style*="display: none"])');
     const countElement = document.getElementById('property-count');
-    
+
     if (countElement) {
         countElement.textContent = `${visibleCards.length} propiedades disponibles`;
     }
@@ -253,20 +262,20 @@ function updatePropertyCount() {
 // === FUNCIÓN DE CONTACTO (Formulario) ===
 function initContactForm() {
     const contactForm = document.getElementById('contactForm');
-    
+
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Obtener datos del formulario
             const formData = new FormData(contactForm);
             const data = Object.fromEntries(formData);
-            
+
             console.log('Datos del formulario:', data);
-            
+
             // Aquí enviarías los datos a tu backend
             // Ejemplo: sendContactData(data);
-            
+
             // Mostrar mensaje de éxito
             showAlert('¡Gracias! Nos pondremos en contacto contigo pronto.', 'success');
             contactForm.reset();
@@ -283,9 +292,9 @@ function showAlert(message, type = 'info') {
             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
     `;
-    
+
     document.body.insertAdjacentHTML('afterbegin', alertHTML);
-    
+
     // Auto-cerrar después de 5 segundos
     setTimeout(() => {
         const alert = document.querySelector('.alert');
@@ -324,7 +333,7 @@ function debounce(func, wait = 250) {
 }
 
 // Ejemplo de uso del debounce
-window.addEventListener('resize', debounce(function() {
+window.addEventListener('resize', debounce(function () {
     console.log('Window resized');
     // Ajustar layout si es necesario
 }, 250));
@@ -341,7 +350,7 @@ function trackEvent(category, action, label) {
 }
 
 // Ejemplo: trackear clicks en propiedades
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
     const propertyCard = e.target.closest('.property-card');
     if (propertyCard) {
         const propertyTitle = propertyCard.querySelector('.property-title').textContent;
