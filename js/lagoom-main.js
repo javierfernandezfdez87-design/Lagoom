@@ -12,6 +12,21 @@ document.addEventListener('DOMContentLoaded', function () {
     initTooltips();
 
     console.log('Lagoom Living - Página cargada correctamente');
+
+    // Auto-open IKEA Promo Modal
+    const promoModalEl = document.getElementById('ikeaPromoModal');
+    if (promoModalEl) {
+        const promoModal = new bootstrap.Modal(promoModalEl);
+
+        // Show after 2 seconds
+        // Optional: Check if already shown in this session
+        if (!sessionStorage.getItem('ikeaPromoShown')) {
+            setTimeout(() => {
+                promoModal.show();
+                sessionStorage.setItem('ikeaPromoShown', 'true');
+            }, 2000);
+        }
+    }
 });
 
 // === TOOLTIPS ===
