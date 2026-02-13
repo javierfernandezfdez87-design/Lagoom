@@ -94,48 +94,41 @@
 
                     <!-- Galería de Imágenes -->
                     <div class="typology-gallery">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <div class="gallery-item-small" data-bs-toggle="modal" data-bs-target="#galleryModal"
-                                    data-index="0">
-                                    <img src="img/4dorm_3.jpg" alt="Dormitorio" class="gallery-img">
-                                </div>
+                        <!-- Main Image -->
+                        <div class="gallery-main-container" data-index="0">
+                            <img src="img/4dorm_3.jpg" alt="Dormitorio" class="gallery-main-image" id="mainGalleryImage"
+                                data-bs-toggle="modal" data-bs-target="#galleryModal">
+                            <button class="gallery-nav-btn gallery-prev" id="prevGalleryBtn"><i
+                                    class="bi bi-chevron-left"></i></button>
+                            <button class="gallery-nav-btn gallery-next" id="nextGalleryBtn"><i
+                                    class="bi bi-chevron-right"></i></button>
+                            <div class="gallery-overlay-icon" data-bs-toggle="modal" data-bs-target="#galleryModal">
+                                <i class="bi bi-arrows-fullscreen"></i>
                             </div>
-                            <div class="col-md-4">
-                                <div class="gallery-item-small" data-bs-toggle="modal" data-bs-target="#galleryModal"
-                                    data-index="1">
-                                    <img src="img/4dorm_2.jpg" alt="Baño" class="gallery-img">
-                                </div>
+                        </div>
+
+                        <!-- Thumbnails -->
+                        <div class="gallery-thumbnails-container">
+                            <div class="gallery-thumbnail active" data-index="0">
+                                <img src="img/4dorm_3.jpg" alt="Dormitorio">
                             </div>
-                            <div class="col-md-4">
-                                <div class="gallery-item-small" data-bs-toggle="modal" data-bs-target="#galleryModal"
-                                    data-index="2">
-                                    <img src="img/4dorm_1.jpg" alt="Cocina" class="gallery-img">
-                                </div>
+                            <div class="gallery-thumbnail" data-index="1">
+                                <img src="img/4dorm_2.jpg" alt="Baño">
                             </div>
-                            <div class="col-md-4">
-                                <div class="gallery-item-small" data-bs-toggle="modal" data-bs-target="#galleryModal"
-                                    data-index="3">
-                                    <img src="img/4dorm_5.jpg" alt="Sala de estar" class="gallery-img">
-                                </div>
+                            <div class="gallery-thumbnail" data-index="2">
+                                <img src="img/4dorm_1.jpg" alt="Cocina">
                             </div>
-                            <div class="col-md-4">
-                                <div class="gallery-item-small" data-bs-toggle="modal" data-bs-target="#galleryModal"
-                                    data-index="4">
-                                    <img src="img/4dorm_6.jpg" alt="Comedor" class="gallery-img">
-                                </div>
+                            <div class="gallery-thumbnail" data-index="3">
+                                <img src="img/4dorm_5.jpg" alt="Sala de estar">
                             </div>
-                            <div class="col-md-4">
-                                <div class="gallery-item-small" data-bs-toggle="modal" data-bs-target="#galleryModal"
-                                    data-index="5">
-                                    <img src="img/4dorm_7.jpg" alt="Cocina detalle" class="gallery-img">
-                                </div>
+                            <div class="gallery-thumbnail" data-index="4">
+                                <img src="img/4dorm_6.jpg" alt="Comedor">
                             </div>
-                            <div class="col-md-4">
-                                <div class="gallery-item-small" data-bs-toggle="modal" data-bs-target="#galleryModal"
-                                    data-index="6">
-                                    <img src="img/4dorm_4.jpg" alt="Cocina detalle" class="gallery-img">
-                                </div>
+                            <div class="gallery-thumbnail" data-index="5">
+                                <img src="img/4dorm_7.jpg" alt="Cocina detalle">
+                            </div>
+                            <div class="gallery-thumbnail" data-index="6">
+                                <img src="img/4dorm_4.jpg" alt="Cocina detalle">
                             </div>
                         </div>
                     </div>

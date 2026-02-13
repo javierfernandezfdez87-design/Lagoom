@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initPropertyCards();
     initMobileMenu();
     initTooltips();
+    initGallery(); // Nueva función para la galería
 
     console.log('Lagoom Living - Página cargada correctamente');
 
@@ -372,3 +373,192 @@ document.addEventListener('click', function (e) {
         trackEvent('Property', 'Click', propertyTitle);
     }
 });
+
+// === GALERÍA DE IMÁGENES (CARRUSEL) ===
+function initGallery() {
+    const mainImage = document.getElementById('mainGalleryImage');
+    const thumbnails = document.querySelectorAll('.gallery-thumbnail');
+    const prevBtn = document.getElementById('prevGalleryBtn');
+    const nextBtn = document.getElementById('nextGalleryBtn');
+
+    // Variables for drag/swipe
+    let isDragging = false;
+    let startPos = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let animationID;
+    let currentIndex = 0;
+
+    if (mainImage && thumbnails.length > 0) {
+
+        // Helper function to update image
+        function updateMainImage(index) {
+            if (index < 0) index = thumbnails.length - 1;
+            if (index >= thumbnails.length) index = 0;
+
+            currentIndex = index;
+            const targetThumb = thumbnails[currentIndex];
+            const newSrc = targetThumb.querySelector('img').getAttribute('src');
+
+            // Fade effect only if not dragging
+            if (!isDragging) {
+                mainImage.style.opacity = '0';
+                setTimeout(() => {
+                    mainImage.src = newSrc;
+                    mainImage.style.opacity = '1';
+                }, 200);
+            } else {
+                mainImage.src = newSrc;
+            }
+
+            // Update active state
+            thumbnails.forEach(t => t.classList.remove('active'));
+            targetThumb.classList.add('active');
+
+            // Update data-index for modal
+            const mainContainer = document.querySelector('.gallery-main-container');
+            if (mainContainer) {
+                mainContainer.setAttribute('data-index', currentIndex);
+            }
+
+            // Scroll thumbnail into view
+            targetThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+
+        // Thumbnail Click Events
+        thumbnails.forEach((thumb, index) => {
+            thumb.addEventListener('click', function (e) {
+                e.stopPropagation(); // Prevent bubbling
+                updateMainImage(index);
+            });
+        });
+
+        // Button Events
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                updateMainImage(currentIndex - 1);
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                updateMainImage(currentIndex + 1);
+            });
+        }
+
+        // Touch/Drag Events for Main Container
+        const mainContainer = document.querySelector('.gallery-main-container');
+
+        if (mainContainer) {
+            // Touch events
+            mainContainer.addEventListener('touchstart', touchStart);
+            mainContainer.addEventListener('touchend', touchEnd);
+            mainContainer.addEventListener('touchmove', touchMove);
+
+            // Mouse events
+            mainContainer.addEventListener('mousedown', touchStart);
+            mainContainer.addEventListener('mouseup', touchEnd);
+            mainContainer.addEventListener('mouseleave', touchEnd);
+            mainContainer.addEventListener('mousemove', touchMove);
+
+            // Prevent context menu
+            mainContainer.addEventListener('contextmenu', e => {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            });
+        }
+
+        function touchStart(event) {
+            isDragging = true;
+            startPos = getPositionX(event);
+            animationID = requestAnimationFrame(animation);
+            mainContainer.style.cursor = 'grabbing';
+        }
+
+        function touchEnd() {
+            isDragging = false;
+            cancelAnimationFrame(animationID);
+            mainContainer.style.cursor = 'pointer';
+
+            const movedBy = currentTranslate - prevTranslate;
+
+            // If moved enough
+            if (movedBy < -50) {
+                updateMainImage(currentIndex + 1);
+            } else if (movedBy > 50) {
+                updateMainImage(currentIndex - 1);
+            }
+
+            // Reset position
+            currentTranslate = 0;
+            prevTranslate = 0;
+            setSliderPosition();
+        }
+
+        function touchMove(event) {
+            if (isDragging) {
+                const currentPosition = getPositionX(event);
+                currentTranslate = prevTranslate + currentPosition - startPos;
+            }
+        }
+
+        function getPositionX(event) {
+            return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+        }
+
+        function animation() {
+            if (isDragging) {
+                setSliderPosition();
+                requestAnimationFrame(animation);
+            }
+        }
+
+        function setSliderPosition() {
+            // Move only the image
+            // We limit movement to avoid dragging it out completely before release
+            if (Math.abs(currentTranslate) < 150) {
+                mainImage.style.transform = `translateX(${currentTranslate}px)`;
+            }
+        }
+
+        // Ensure reset on image update (handled in updateMainImage implicitly by src change, but let's be safe)
+        const originalUpdate = updateMainImage;
+        updateMainImage = function (index) {
+            mainImage.style.transform = `translateX(0px)`;
+            originalUpdate(index);
+        }
+
+        // Sincronizar modal
+        const galleryModal = document.getElementById('galleryModal');
+        if (galleryModal) {
+            galleryModal.addEventListener('show.bs.modal', function (event) {
+                const triggerElement = event.relatedTarget;
+                let index = currentIndex; // Default to current index
+
+                if (triggerElement) {
+                    // Try to get index from element itself or closest container
+                    if (triggerElement.hasAttribute('data-index')) {
+                        index = parseInt(triggerElement.getAttribute('data-index'));
+                    } else {
+                        const container = triggerElement.closest('.gallery-main-container');
+                        if (container && container.hasAttribute('data-index')) {
+                            index = parseInt(container.getAttribute('data-index'));
+                        }
+                    }
+                }
+
+                // Buscar el carrusel dentro del modal
+                const carouselElement = galleryModal.querySelector('.carousel');
+                if (carouselElement) {
+                    const carousel = bootstrap.Carousel.getOrCreateInstance(carouselElement);
+                    carousel.to(parseInt(index));
+                }
+            });
+        }
+    }
+}

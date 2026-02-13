@@ -63,32 +63,166 @@
     margin-bottom: 30px;
 }
 
-/* Galería de Imágenes */
+/* Galería de Imágenes - Nuevo Estilo Carrusel */
 .typology-gallery {
     margin-bottom: 40px;
-    margin-left: -7.5px;
-    margin-right: -7.5px;
 }
 
-.gallery-item-small {
+.gallery-main-container {
     position: relative;
-    height: 250px;
+    margin-bottom: 15px;
+    border-radius: 12px;
     overflow: hidden;
-    border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.3s ease;
-    padding: 7.5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-.gallery-item-small:hover {
-    transform: scale(1.02);
+.gallery-main-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-.gallery-img {
+.gallery-main-container:hover .gallery-main-image {
+    transform: scale(1.03);
+}
+
+.gallery-thumbnails-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 5px 0 15px;
+    scrollbar-width: thin;
+    scrollbar-color: #000 #f0f0f0;
+}
+
+.gallery-thumbnails-container::-webkit-scrollbar {
+    height: 6px;
+}
+
+.gallery-thumbnails-container::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 3px;
+}
+
+.gallery-thumbnails-container::-webkit-scrollbar-thumb {
+    background-color: #000;
+    border-radius: 3px;
+}
+
+.gallery-thumbnail {
+    width: 140px;
+    height: 100px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.gallery-thumbnail.active,
+.gallery-thumbnail:hover {
+    opacity: 1;
+    border-color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-thumbnail img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 8px;
+}
+
+/* Arrow indicator on main image */
+.gallery-overlay-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.gallery-main-container:hover .gallery-overlay-icon {
+    background-color: #000;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .gallery-main-image {
+        height: 350px;
+    }
+
+    .gallery-thumbnail {
+        width: 100px;
+        height: 70px;
+    }
+}
+
+/* Navigation Buttons */
+.gallery-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #000;
+    transition: all 0.3s ease;
+    opacity: 0;
+    z-index: 10;
+}
+
+.gallery-main-container:hover .gallery-nav-btn {
+    opacity: 1;
+}
+
+.gallery-nav-btn:hover {
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-prev {
+    left: 20px;
+}
+
+.gallery-next {
+    right: 20px;
+}
+
+@media (max-width: 768px) {
+    .gallery-nav-btn {
+        opacity: 1;
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+
+    .gallery-prev {
+        left: 10px;
+    }
+
+    .gallery-next {
+        right: 10px;
+    }
 }
 
 /* Información de Precio y Características */
@@ -370,15 +504,15 @@
         position: static;
         margin-top: 50px;
     }
-    
+
     .typology-title {
         font-size: 2rem;
     }
-    
+
     .gallery-item-small {
         height: 220px;
     }
-    
+
     .container-custom {
         padding-left: 20px;
         padding-right: 20px;
@@ -389,51 +523,51 @@
     .typology-content-section {
         padding: 20px 0 50px;
     }
-    
+
     .typology-title {
         font-size: 1.75rem;
     }
-    
+
     .price-range {
         font-size: 1.5rem;
     }
-    
+
     .gallery-item-small {
         height: 180px;
         padding: 5px;
     }
-    
+
     .typology-gallery {
         margin-left: -5px;
         margin-right: -5px;
     }
-    
+
     .features-list {
         flex-direction: column;
     }
-    
+
     .feature-badge {
         justify-content: center;
     }
-    
+
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 15px;
     }
-    
+
     .custom-tabs .nav-link {
         padding: 12px 15px;
         font-size: 14px;
     }
-    
+
     .calculator-card {
         padding: 20px;
     }
-    
+
     .calculator-title {
         font-size: 1.25rem;
     }
-    
+
     .container-custom {
         padding-left: 15px;
         padding-right: 15px;
@@ -445,19 +579,19 @@
         height: 200px;
         padding: 5px;
     }
-    
+
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .service-item-small {
         padding: 10px;
     }
-    
+
     .service-item-small i {
         font-size: 24px;
     }
-    
+
     .service-item-small span {
         font-size: 12px;
     }
@@ -469,6 +603,7 @@
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -510,6 +645,7 @@
 
 /* Print styles */
 @media print {
+
     .top-bar,
     .main-navbar,
     .calculator-sidebar,
@@ -518,11 +654,11 @@
     .btn {
         display: none;
     }
-    
+
     .typology-content-section {
         padding: 0;
     }
-    
+
     .gallery-item-small {
         height: auto;
         page-break-inside: avoid;
