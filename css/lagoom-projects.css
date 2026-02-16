@@ -1,0 +1,374 @@
+/* === PROJECT DETAIL STYLES === */
+
+.project-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 500px;
+    margin: 20px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.project-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.project-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.project-hero-title {
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.project-hero-logos {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    background: #ffffffab;
+    padding: 15px 10px;
+    width: 50%;
+}
+
+.project-hero-logos img {
+    height: 70px;
+    width: auto;
+    background: none;
+}
+
+.project-stats-floating {
+    position: absolute;
+    bottom: 0;
+    right: 60px;
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    gap: 40px;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stat-box-item {
+    text-align: center;
+}
+
+.stat-box-value {
+    display: block;
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+}
+
+.stat-box-label {
+    display: block;
+    font-size: 1rem;
+    color: #666;
+    text-transform: uppercase;
+}
+
+/* Icons Grid */
+.project-icons-section {
+    padding: 60px 0;
+}
+
+.project-icons-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.project-icon-item {
+    text-align: center;
+    width: 120px;
+}
+
+.project-icon-wrapper {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #333;
+}
+
+.project-icon-label {
+    font-size: 1rem;
+    font-family: 'Jost', sans-serif;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 1.2;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Content Section */
+.project-content-section {
+    padding: 40px 0;
+}
+
+.project-header-small {
+    color: #666;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.project-main-header {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.project-description-text {
+    font-family: 'Jost', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Media/Video Section */
+.project-media-box {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 20px;
+    margin: 40px 0;
+}
+
+/* Gallery Grid */
+.project-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.project-gallery-item {
+    aspect-ratio: 3/2;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.project-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Dark Stats Overlay Section */
+.project-stats-overlay-section {
+    position: relative;
+    padding: 100px 0;
+    background: #000;
+    border-radius: 30px;
+    margin: 0 20px;
+    overflow: hidden;
+}
+
+.stats-overlay-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+}
+
+.stats-card-container {
+    position: relative;
+    z-index: 1;
+}
+
+.stat-overlay-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 20px;
+    color: #fff;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 400px;
+}
+
+.stat-overlay-icon {
+    font-size: 1.5rem;
+}
+
+.stat-overlay-value {
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: block;
+}
+
+.stat-overlay-label {
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.stats-overlay-title {
+    color: #fff;
+    text-align: right;
+    font-size: 2.5rem;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Contact Section */
+.project-contact-section {
+    padding: 80px 0;
+}
+
+.contact-info-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.contact-form-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.project-form input,
+.project-form textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.project-form input:focus,
+.project-form textarea:focus {
+    outline: none;
+    border-bottom-color: #000;
+}
+
+.btn-contact-submit {
+    background: #444;
+    color: #fff;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 30px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+/* Map Section */
+.project-map-section {
+    width: 100%;
+    height: 400px;
+    background: #eee;
+    margin-bottom: 40px;
+}
+
+/* Collaboration Logos */
+.collaboration-section {
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.collaboration-title {
+    font-size: 1.2rem;
+    font-family: 'Outfit', sans-serif;
+    margin-bottom: 30px;
+}
+
+.collaboration-logos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.collaboration-logos img {
+    height: 35px;
+    width: auto;
+}
+
+/* Responsive adjustments */
+/* Base Style Overrides for Project Pages (Min 16px) */
+.top-bar {
+    font-size: 16px !important;
+}
+
+.footer-address,
+.footer-contact,
+.footer-menu a,
+.footer-copyright,
+.footer-legal a {
+    font-size: 16px !important;
+}
+
+.footer-consent {
+    font-size: 16px !important;
+}
+
+@media (max-width: 992px) {
+    .project-hero-title {
+        font-size: 2.5rem;
+    }
+
+    .project-stats-floating {
+        position: relative;
+        right: 0;
+        margin: -40px 20px 0;
+        justify-content: space-around;
+        border-radius: 20px;
+    }
+
+    .project-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .project-main-header {
+        font-size: 1.5rem;
+    }
+
+    .project-stats-overlay-section {
+        padding: 60px 0;
+    }
+
+    .stats-overlay-title {
+        text-align: center;
+        margin-top: 40px;
+    }
+}
